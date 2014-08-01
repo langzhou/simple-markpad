@@ -1,6 +1,6 @@
 ﻿[editor_theme]
 
-font            = 宋体
+font            = 微软雅黑
 font_size       = 11
 color           = #404040
 cursor_color    = #16B0FF

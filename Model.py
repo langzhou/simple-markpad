@@ -4,10 +4,7 @@ class Model():
 
     def __init__(self):
         
-
-        
-
-        
+       
         self.FILE_PATH      =   ""
         self.TABS           =   [{ "path": "" }]
         self.Project_path   =   ""

@@ -17,7 +17,6 @@ class Controller():
         Constructor
         '''
 
-
         self.VIEW = view
         self.MODEL = model
         self.CONTROLLER = self
@@ -79,18 +78,15 @@ class Controller():
         self.VIEW.inputEdit.set_lingheight()
         self.VIEW.inputEdit.document().setModified(False)
         self.VIEW.set_win_title(file_path+' - '+ Constants.APP_TITLE)
-
-
-
         
         return file_path
+
             
     def open_file(self):
 
         content = self.VIEW.inputEdit.toPlainText()
         if content and self.MODEL.FILE_PATH:
             self.save_file()
-
 
         file_path = self.VIEW.select_file()
         if file_path != False:
@@ -151,11 +147,13 @@ class Controller():
         else:
             self.docCount()
 
+
     @pyqtSlot()
     def docCount(self):
         textContent = self.inputEdit.toPlainText()
         count = self.MODEL.wordsCounter(textContent)
-        self.VIEW.showCounter('Words',count[0],count[1])           
+        self.VIEW.showCounter('Words',count[0],count[1])  
+
 
     def preview(self):
         if self.is_preview == 1:
@@ -168,14 +166,11 @@ class Controller():
             css = self.MODEL.preview_css()
             html = char + "<style>" + css + "</style>" + html
 
-
             # add by allen
             if isinstance(html, unicode):
                 html = html.encode('utf-8')
             else:
                 html = html.decode('utf-8').encode('ascii')
-
-
             
             
             self.VIEW.web.setContent( html)
@@ -191,10 +186,7 @@ class Controller():
             self.is_preview = 0 - self.is_preview
 
             self.VIEW.web.close()
-            self.inputEdit.show()
-
-
-            
+            self.inputEdit.show()            
 
 
 
@@ -219,16 +211,13 @@ class Controller():
             self.inputEdit.setHtml(content)
             self.inputEdit.set_lingheight()
             cursor.setPosition(self.cursor_position)
-            self.inputEdit.setTextCursor(cursor)
-
-            
+            self.inputEdit.setTextCursor(cursor)         
 
         
 
     def preview2(self):
         content = self.VIEW.inputEdit.toPlainText()
-        html = markdown.markdown( unicode(content),extensions=['footnotes','tables'] )       
-
+        html = markdown.markdown( unicode(content),extensions=['footnotes','tables'] )     
 
         # add by allen
         if isinstance(html, unicode):
@@ -236,12 +225,12 @@ class Controller():
         else:
             html = html.decode('utf-8').encode('ascii')
 
-
         char = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
         self.VIEW.preview_browser.setContent( char + "<style>"+self.MODEL.base_css+"</style>" + html)
 
         self.VIEW.preview.show()
+        
         
     def export_html(self):
         

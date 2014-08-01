@@ -5,19 +5,14 @@ from PyQt4.QtCore import *
 import Constants,Model
 
 class MarkdownHighlighter(QSyntaxHighlighter):
-    '''
-    classdocs
-    '''
+
 
     def __init__(self, parent=None):
-        '''
-        Constructor
-        '''
+   
         super(MarkdownHighlighter, self).__init__(parent)
 
 
-        configs = Model.Model().read_config('config.ini','default')
-      
+        configs = Model.Model().read_config('config.ini','default')      
         configs = Model.Model().read_config('theme/'+configs['editor_theme']+'.txt','editor_theme')
 
 
@@ -41,9 +36,6 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         self.font_color             = configs['color']
 
 
-
-
-
         keywordFormat = QTextCharFormat()
         keywordFormat.setForeground(Qt.darkBlue)
         keywordFormat.setFontWeight(QFont.Bold)
@@ -51,10 +43,8 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         keywordPatterns = []
 
         self.highlightingRules = [(QRegExp(pattern), keywordFormat)
-                for pattern in keywordPatterns]
-       
+                for pattern in keywordPatterns]    
      
-
 
         self.format = QTextCharFormat()
         self.format.setForeground(QColor('#343434'))
@@ -83,7 +73,6 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         self.highlightingRules.append((boldReg,boldFormat))
 
 
-        
         # h1
         h1Format = QTextCharFormat()
         h1Format.setForeground(QColor(self.h1_color))
@@ -98,6 +87,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         h2Format.setFontWeight(23)
         h2Format.setFontPointSize(int(configs['h2_size']))
         self.highlightingRules.append((QRegExp("^##.*$"),h2Format))
+
         
         # h3
         h3Format = QTextCharFormat()
@@ -105,6 +95,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         h3Format.setFontWeight(23)
         h3Format.setFontPointSize(int(configs['h3_size']))
         self.highlightingRules.append((QRegExp("^###.*$"),h3Format))
+
         
         # h4
         h4Format = QTextCharFormat()
@@ -112,6 +103,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         h4Format.setFontWeight(23)
         h4Format.setFontPointSize(int(configs['h4_size']))
         self.highlightingRules.append((QRegExp("^####.*$"),h4Format))
+
         
         # h5
         h5Format = QTextCharFormat()
@@ -119,6 +111,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         h5Format.setFontWeight(23)
         h5Format.setFontPointSize(int(configs['h5_size']))
         self.highlightingRules.append((QRegExp("^#####.*$"),h5Format))
+
         
         # h6
         h6Format = QTextCharFormat()
@@ -147,6 +140,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         hrFormat.setFontWeight(65)
         #hrFormat.setBackground(QColor(self.hr_back_color))
         self.highlightingRules.append((QRegExp("^[\-|\*]{3,}$"),hrFormat))
+
         
         # link
         linkFormat = QTextCharFormat()
@@ -155,6 +149,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         linkReg = QRegExp("<(http|www).+>")
         linkReg.setMinimal(True)
         self.highlightingRules.append((linkReg,linkFormat))
+
         
         # anchor
         anchorFormat = QTextCharFormat()
@@ -162,6 +157,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         anchorReg = QRegExp("(\[.+\])(\(.+\))")
         anchorReg.setMinimal(True)
         self.highlightingRules.append((anchorReg,anchorFormat))
+
 
         # footnote
         footnoteFormat = QTextCharFormat()
@@ -181,10 +177,12 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         footnote2Format.setFontPointSize(int(configs['font_size'])-2)
         self.highlightingRules.append((QRegExp("^\[\^*[\w|\d]+\]:.+"),footnote2Format))
 
+
         # list
         listFormat = QTextCharFormat()
         listFormat.setForeground(QColor(self.gray))
-        self.highlightingRules.append((QRegExp("^[\*|\-] "),listFormat))       
+        self.highlightingRules.append((QRegExp("^[\*|\-] "),listFormat))      
+
 
         #code
         codeFormat = QTextCharFormat()
@@ -192,7 +190,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         codeFormat.setBackground(QColor(self.hr_back_color))
         codeFormat.setFontWeight(23)
         self.highlightingRules.append((QRegExp("`.*`"),codeFormat))
-        
+
         codeFormat2 = QTextCharFormat()
         codeFormat2.setForeground(QColor(self.code_color))
         #codeFormat2.setFontPointSize(12)
@@ -204,8 +202,6 @@ class MarkdownHighlighter(QSyntaxHighlighter):
         blockQuotesFormat.setForeground(QColor(self.block_quotes_color))
         blockQuotesFormat.setBackground(QColor(self.hr_back_color))
         self.highlightingRules.append((QRegExp("^> .+"),blockQuotesFormat))
-
-
         
         # html entity
         htmlEntityFormat = QTextCharFormat()
@@ -245,8 +241,7 @@ class MarkdownHighlighter(QSyntaxHighlighter):
                     self.setFormat(index2,length2,self.format)
                     index2 = index + len1 + 1
                     length2 = len2 - 2
-                    self.setFormat(index2,length2,self.format)
-                
+                    self.setFormat(index2,length2,self.format)                
 
                 index = expression.indexIn(text, index + length)
 

@@ -1,6 +1,4 @@
 #coding=utf-8
-
-
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 from PyQt4.QtWebKit import QWebView
@@ -9,7 +7,6 @@ import Highlighter, Constants, Model, Controller
 import os, os.path,platform, subprocess,sys,re
 from shutil import copy
 from types import StringType
-
 
 
 class View(QtGui.QMainWindow):
@@ -32,7 +29,6 @@ class View(QtGui.QMainWindow):
 
         self.setup_css()
         self.setup_ui()
-
 
 
     #窗口关闭事件
@@ -66,7 +62,8 @@ class View(QtGui.QMainWindow):
 
         self.web.setFixedWidth(width)
 
-###########################################
+##### init UI ######################################
+
     def setup_css(self):
         style_css = QFile("style/default.css")
         style_css.open(QFile.ReadOnly)
@@ -206,7 +203,6 @@ class View(QtGui.QMainWindow):
         actionMenu.addAction(self.fullscreenAction)
         actionMenu.addAction(self.exportHTMLAction) 
 
-
         # add help menu     
         '''   
         self.syntaxAction = QtGui.QAction(QtGui.QIcon(), 'Markdown &Syntax', self)
@@ -298,13 +294,16 @@ class View(QtGui.QMainWindow):
 
         self.hbox.addLayout(vbox)
 
-############# 字数统计 ###############
+############# 字数统计 words counter ###############
+
     def showCounter(self,label,cn,en):          
         cn = str(cn)
         en = str(en)
         msg = label+":ZH:"+cn+"-EN:"+en
         self.counter.setText(msg)
-#################################
+
+######### set full screen ####################
+
     def show_fullscreen(self):
         if  self.isFullScreen():
             self.resize(800,600)
@@ -357,6 +356,7 @@ class View(QtGui.QMainWindow):
         cursor.movePosition(QtGui.QTextCursor.EndOfBlock)
         cursor.insertText("\r\n"+block)
         self.inputEdit.setTextCursor(cursor)
+
 ############## text format ################
 
     def add_link(self):
@@ -436,7 +436,8 @@ class View(QtGui.QMainWindow):
         else:
             return 0
 
-##############通用组件
+############## 通用组件 ################
+
     def get_current_document_content(self):
         return unicode(self.inputEdit.toPlainText())  
 
@@ -486,8 +487,6 @@ class Theme():
 
     def test(self):
         pass
-
-
 
 
 ##### TreeView #########################################
@@ -579,14 +578,12 @@ class TreeView(QtGui.QTreeView):
         file_path = QtGui.QFileSystemModel().filePath(index)
         file_path = unicode(file_path,'utf-8','ignore') 
         os.remove(file_path)
+
 ##### Editor Class ######################################
 
 class Editor(QtGui.QTextEdit):
     def __init__(self, parent=None):  
         super(Editor, self).__init__(parent)
-
-
-
 
         self.model = Model.Model()
         self.configs = self.model.read_config('config.ini')
@@ -643,7 +640,6 @@ class Editor(QtGui.QTextEdit):
             print e 
 
 
-
     def set_ui(self):
         theme = self.model.read_config('theme/'+self.model.configs['editor_theme']+'.txt','editor_theme')
         self.theme = theme
@@ -672,7 +668,6 @@ class Editor(QtGui.QTextEdit):
         cur = self.textCursor()
         cur.setBlockFormat(fmt)
         self.setTextCursor(cur)
-
 
 
     # 括号自动完成

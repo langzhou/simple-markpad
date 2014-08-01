@@ -1,6 +1,6 @@
 ﻿[editor_theme]
 
-font            = Calibri,宋体
+font            = 微软雅黑
 font_size       = 11
 color           = #555
 cursor_color    = #16B0FF
