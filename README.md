@@ -6,6 +6,7 @@ a markdown editor made with pyqt4.
 
 ## Dependences
 
+- pyqt4
 - markdown
 
 
