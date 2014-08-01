@@ -1,7 +1,7 @@
 simple-markpad
 ==============
 
-a markdown editor made with pyqt.
+a markdown editor made with pyqt4.
 
 
 ## Dependences
