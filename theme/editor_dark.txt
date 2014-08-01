@@ -1,0 +1,33 @@
+﻿[editor_theme]
+
+font            = Calibri,宋体
+font_size       = 11
+color           = #F8F8F2
+cursor_color    = #16B0FF
+selection_bacground = #FFF
+selection_color	= #000
+background      = #272822
+padding         = 10
+line_height     = 1.2
+
+h1_size         = 16
+h2_size         = 14
+h3_size         = 12
+h4_size         = 12
+h5_size         = 12
+h6_size         = 12
+h1_color        = #ff4400
+h2_color        = #ff4400
+h3_color        = #ff4400
+h4_color        = #fefefe
+h5_color        = #fefefe
+h6_color        = #fefefe
+
+link_color             = #EFEFEF
+bold_color             = #000
+italic_color           = #3C3C3C
+code_color             = #7C7676
+anchor_color           = #7C7676
+block_quotes_color     = #7C7676
+html_entity_color      = #7C7676
+hr_color               = #ccc

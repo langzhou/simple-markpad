@@ -1,0 +1,145 @@
+QMainWindow{
+    background-color:#DDD;
+}
+QTextEdit{
+    padding:5px 10px;
+    background-color: #fefefe;
+    border: 0px solid #ff0000;
+    border-radius: 5px;
+    color:#464646;
+    selection-background-color:#EFEFEF;
+    selection-color:#444;
+    min-width: 300px;
+
+}
+
+ QTreeView {
+     alternate-background-color: yellow;
+     max-width:300px;
+     border:0px solid #FCFCFC;
+     border-radius:5px;
+     background: #F6F6F6;
+     padding-top: 10px;
+     color:#444;
+ }
+
+
+/**菜单栏**/
+QMenuBar{
+ 
+    background-color: #F0F0F0;
+    border-bottom: 1px solid #BBB;
+}
+
+QMenuBar::item{
+    background: transparent;
+    color:#fff;
+    color:#444;
+}
+ QMenuBar::item:selected { /* when selected using mouse or keyboard */
+     background: #fefefe;
+     color:brown;
+}
+
+ QMenuBar::item:pressed {
+     background: #FF6600;
+     color:#FFF;
+ }
+
+ QMenu{
+    background-color: #FCFCFC;
+    color:#654312;
+ }
+  QMenu::item:selected {
+    color:#FFF;
+    background: #FF6600;
+ }
+
+ /**状态栏**/
+
+QStatusBar{
+    font-size: 12px;
+}
+QStatusBar QLabel{
+    color:#333;
+    font-size: 12px;
+    font-family: 'consolas'
+}
+
+/** scrollar **/
+
+QScrollBar:vertical
+{
+    width:8px;
+    background:rgba(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    padding-top:9px;   
+    padding-bottom:9px;
+}
+QScrollBar::handle:vertical
+{
+    width:8px;
+    background: rgba(0,0,0,4%);
+    border-radius:8px;  
+    min-height:10px;
+}
+QScrollBar::handle:vertical:hover
+{
+    width:8px;
+    background:rgba(0,0,0,50%);   
+    border-radius:8px;
+    min-height:10px;
+}
+QScrollBar::add-line:vertical   
+{
+    height:1px;width:8px;
+    border-image:url(:/images/a/3.png);
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical   
+{
+    height:1px;width:8px;
+    border-image:url(:/images/a/1.png);
+    subcontrol-position:top;
+}
+QScrollBar::add-line:vertical:hover   
+{
+    height:1px;width:8px;
+    border-image:url(:/images/a/4.png);
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical:hover  
+{
+    height:1px;width:8px;
+    border-image:url(:/images/a/2.png);
+    subcontrol-position:top;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical   
+{
+    background:#fcfcfc;
+    
+}
+/** 目录浏览 **/
+ QTreeView::item {
+    border: 0px solid #d9d9d9;
+     border-top-color: transparent;
+     border-bottom-color: transparent;
+ }
+
+ QTreeView::item:hover {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #e7effd, stop: 1 #cbdaf1);
+     border: 1px solid #bfcde4;
+ }
+
+ QTreeView::item:selected {
+     border: 1px solid #567dbc;
+     color:white;
+ }
+
+ QTreeView::item:selected:active{
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6ea1f1, stop: 1 #567dbc);
+ }
+
+ QTreeView::item:selected:!active {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b9be8, stop: 1 #577fbf);
+ }

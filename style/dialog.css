@@ -1,0 +1,27 @@
+
+QDialog{
+	border: 5px solid #ccc;
+	padding: 10px 15px;
+	font-size: 20px;
+	font-family: 'Microsoft Yahei';
+
+}
+QLabel{
+	font-family: 'Microsoft Yahei';
+}
+QLineEdit{
+	border:1px solid #fcfcfc;
+	background: #FFFDEF;
+	height: 20px;
+	font-family: 'Microsoft Yahei';
+}
+QPushButton{
+	border:1px solid #EEE;
+	padding:5px;
+	border-radius: 5px;
+	color:#444;
+	font-weight:bold;
+	background-color: #CCC;
+	font-family: 'Microsoft Yahei';
+
+}

@@ -1,0 +1,29 @@
+﻿[editor_theme]
+
+font            = 宋体
+font_size       = 11
+color           = #404040
+cursor_color    = #16B0FF
+background      = #fdfdfd
+padding         = 10
+line_height     = 1.3
+h1_size         = 14
+h2_size         = 12
+h3_size         = 11
+h4_size         = 11
+h5_size         = 11
+h6_size         = 11
+h1_color        = #000
+h2_color        = #000
+h3_color        = #000
+h4_color        = #000
+h5_color        = #000
+h6_color        = #000
+link_color             = #565656
+bold_color             = #000
+italic_color           = #3C3C3C
+code_color             = #7C7676
+anchor_color           = #7C7676
+block_quotes_color     = #7C7676
+html_entity_color      = #7C7676
+hr_color               = #ccc
