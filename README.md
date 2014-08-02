@@ -7,7 +7,7 @@ a markdown editor made with pyqt4.
 
 you can visit the home page for help.
 
-Home:<http://simple-markpad.qiniudn.com/>
+<http://simple-markpad.qiniudn.com/>
 
 
 ## Dependences
