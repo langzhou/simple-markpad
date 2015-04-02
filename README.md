@@ -15,7 +15,7 @@ You can visit the home page for more information.
 ## 2. Dependences
 
 - pyqt4
-- markdown
+- python-markdown
 
 
 ## 3. Screenshot
