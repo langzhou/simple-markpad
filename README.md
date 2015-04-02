@@ -1,11 +1,13 @@
-simple-markpad
+Simple-MarkPad
 ==============
 
-a markdown editor made with pyqt4.
+This is a new markdown editor made with pyqt4.
+
+**Update** Simple MarkPad for Android is available. Get it from [Wandoujia](http://www.wandoujia.com/apps/net.mindbeta.simplenote)!
 
 ## Home page
 
-you can visit the home page for help.
+You can visit the home page for more information.
 
 <http://simple-markpad.qiniudn.com/>
 
